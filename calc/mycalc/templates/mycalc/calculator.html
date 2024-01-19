@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Online Calculator</title>
+</head>
+<body>
+
+{% block content %}
+    
+<center>
+<div class="container-md m-3">
+
+    <div class="row">
+        <div class="col-md-12 m-3">
+            <h3>ON-LINE CALCULATOR</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 m-3">
+            <form action="/" name = "form1">
+                {% csrf_token %}
+                
+                <div class="col-md-4">
+                    <input type="text" id="display" class="form-control" placeholder="0" name="answer">
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="1" onclick = "form1.answer.value += '1'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="2" onclick = "form1.answer.value += '2'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="3" onclick = "form1.answer.value += '3'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="+" onclick = "form1.answer.value += '+'">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="4" onclick = "form1.answer.value += '4'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="5" onclick = "form1.answer.value += '5'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="6" onclick = "form1.answer.value += '6'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="-" onclick = "form1.answer.value += '-'">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="7" onclick = "form1.answer.value += '7'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="8" onclick = "form1.answer.value += '8'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="9" onclick = "form1.answer.value += '9'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="*" onclick = "form1.answer.value += '*'">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="/" onclick = "form1.answer.value += '/'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="0" onclick = "form1.answer.value += '0'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="." onclick = "form1.answer.value += '.'">
+                        <input type="button" class="btn btn-primary btn-md m-3" value="=" onclick = "form1.answer.value = eval(form1.answer.value)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear" > 
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</center>
+
+{% endblock content %}
+
+</body>
+</html>
